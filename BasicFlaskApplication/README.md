@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Flask Application with Kubernetes Deployment
 
 A comprehensive guide to containerizing a Flask application and deploying it to Kubernetes with production-ready configurations including persistent storage, environment management, and network access.
