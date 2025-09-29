@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Flask Application with Kubernetes Deployment
 
 A simple Flask application containerized with Docker and deployed on Kubernetes.
