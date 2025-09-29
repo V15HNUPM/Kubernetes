@@ -123,8 +123,8 @@ kubectl exec -it deployment/flask-app -n flask-app -- /bin/sh
 
 ## 🔗 Source
 
-This project is based on: [https://github.com/LondheShubham153/flask-app-ecs](https://github.com/LondheShubham153/flask-app-ecs)
-
+This project is based on: 
 ---
-
+```
+[https://github.com/LondheShubham153/flask-app-ecs](https://github.com/LondheShubham153/flask-app-ecs)
 ```
