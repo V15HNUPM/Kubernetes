@@ -1,0 +1,25 @@
+version: "3.9"
+
+services: 
+    flask:
+        build:
+            context: .
+        container_name: "flask-app"
+        ports:
+            - "5000:5000"
+        env_file:
+            - .env
+        environment:
+            - FLASK_APP=website
+            - SQLALCHEMY_TRACK_MODIFICATIONS=False
+        command: ["python", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000"]
+        volumes:
+            - ./website/database.db:/app/website/database.db
+            - ./website:/app/website
+        networks:
+            - flask-network
+        restart: always
+
+networks:
+    flask-network:
+        driver: bridge
