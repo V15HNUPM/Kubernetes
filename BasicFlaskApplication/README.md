@@ -20,7 +20,6 @@ This project demonstrates a complete DevOps workflow for deploying a Flask appli
 - ✅ **Production-Ready** settings
 
 ## 🏗️ Architecture
-```
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
