@@ -1,4 +1,4 @@
-```markdown
+
 # ☕ Simple Java Docker Application
 
 A minimal Java application containerized with Docker and deployed on Kubernetes. This project demonstrates how to package a simple Java application and run it in a Kubernetes cluster.
