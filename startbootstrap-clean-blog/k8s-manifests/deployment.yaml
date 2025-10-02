@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+  namespace: react-blog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-app
+  template:
+    metadata:
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - name: react-app
+        image: v15hnupm/react-blog:latest
+        ports:
+        - containerPort: 3000
+        command: ["/bin/sh"]
+        args: 
+        - "-c"
+        - |
+          echo "=== Starting React App ==="
+          echo "Current directory: $(pwd)"
+          echo "Contents: $(ls -la)"
+          echo "Looking for dist directory..."
+          find / -name "dist" -type d 2>/dev/null | head -5
+          echo "=== Starting HTTP Server ==="
+          # Try different possible locations
+          if [ -d "/app/dist" ]; then
+            cd /app/dist && npx http-server -p 3000 -a 0.0.0.0 --cors
+          elif [ -d "./dist" ]; then
+            cd ./dist && npx http-server -p 3000 -a 0.0.0.0 --cors
+          elif [ -d "dist" ]; then
+            cd dist && npx http-server -p 3000 -a 0.0.0.0 --cors
+          else
+            echo "ERROR: dist directory not found!"
+            echo "Available directories:"
+            find / -type d -name "*dist*" 2>/dev/null
+            sleep 3600
+          fi
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        # Remove health checks temporarily

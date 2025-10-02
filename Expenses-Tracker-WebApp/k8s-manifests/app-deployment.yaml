@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expenses-app
+  namespace: springboot-expenses
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expenses-app
+  template:
+    metadata:
+      labels:
+        app: expenses-app
+    spec:
+      containers:
+      - name: expenses-app
+        image: v15hnupm/expenses-tracker:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysql-service.springboot-expenses.svc.cluster.local:3306/expenses_tracker?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "Test@123"
+        - name: SPRING_PROFILES_ACTIVE
+          value: "production"
+        - name: SERVER_PORT
+          value: "8080"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        # Remove health checks temporarily

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-java-app
+  namespace: simple-java
+  labels:
+    app: simple-java
+spec:
+  replicas: 1  # Reduce to 1 for testing
+  selector:
+    matchLabels:
+      app: simple-java
+  template:
+    metadata:
+      labels:
+        app: simple-java
+    spec:
+      containers:
+      - name: java-app
+        image: v15hnupm/simple-java:latest
+        ports:
+        - containerPort: 8000
+        # REMOVE livenessProbe and readinessProbe completely
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        # Add this to keep container running even if app exits
+        command: ["/bin/sh"]
+        args: ["-c", "java Main; while true; do sleep 30; done"]

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: django-config
+  namespace: django-notes-app
+data:
+  DJANGO_SETTINGS_MODULE: "notesapp.settings"
+  DEBUG: "0"

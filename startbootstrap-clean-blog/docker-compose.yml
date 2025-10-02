@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+    npm: 
+        build:
+            context: .
+        container_name: "blog-app"
+        ports:
+            - "3000:3000"
