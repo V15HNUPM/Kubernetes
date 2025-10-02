@@ -1,4 +1,3 @@
-```markdown
 # 🐍 Django Blog Website with MySQL & Kubernetes
 
 A full-featured Django blog application with MySQL database, containerized with Docker and deployed on Kubernetes.
