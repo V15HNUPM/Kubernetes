@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Node.js Express MongoDB Kubernetes Application
 
 A full-stack Node.js Express application with MongoDB, containerized with Docker and deployed on Kubernetes.
