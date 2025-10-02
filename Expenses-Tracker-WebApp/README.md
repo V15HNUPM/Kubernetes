@@ -1,4 +1,3 @@
-```markdown
 # 💰 Expenses Tracker WebApp - Spring Boot & Kubernetes
 
 A full-stack Expenses Tracker application built with Spring Boot, MySQL, and deployed on Kubernetes with complete microservices architecture.
@@ -8,7 +7,7 @@ A full-stack Expenses Tracker application built with Spring Boot, MySQL, and dep
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
-```
+
 ## 📋 About
 
 This project demonstrates a production-ready expenses tracking application with:
