@@ -1,4 +1,3 @@
-```markdown
 # 🐍 Django Notes App with MySQL & Kubernetes
 
 A full-stack Django application with MySQL database, containerized with Docker and deployed on Kubernetes with Nginx as a reverse proxy.
